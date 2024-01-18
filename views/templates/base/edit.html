@@ -1,0 +1,49 @@
+{{ template "layout" . }}{{ define "content" }}
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Edit Barang</h4>
+  </div>
+
+  <form action="/api/edit/{{ .barang.ID }}" method="POST">
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 col-lg-12">
+        <div class="form-group">
+          <label for="">Nama Barang</label>
+          <input
+            type="text"
+            class="form-control"
+            name="NamaBarang"
+            value="{{ .barang.NamaBarang }}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Stock</label>
+          <input
+            type="text"
+            class="form-control"
+            name="Stock"
+            value="{{ .barang.Stock}}"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="">Harga</label>
+          <input
+            type="text"
+            class="form-control"
+            name="Harga"
+            value="{{ .barang.Harga }}"
+          />
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success col-lg-1 mx-1 my-2">
+      Submit
+    </button>
+  </div>
+</div>
+</form>
+
+{{ end }}
